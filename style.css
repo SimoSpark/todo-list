@@ -1,22 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #f0f8ff;
 }
 h1 {
     text-align: center;
+    color: #333;
 }
 #todo-form {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
 }
-#todo-input {
+#todo-input, #due-date, #time-input, #priority {
     flex-grow: 1;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
 }
 #add-button {
     padding: 10px 20px;
@@ -24,7 +28,7 @@ h1 {
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     cursor: pointer;
 }
 #add-button:hover {
@@ -38,10 +42,14 @@ li {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     border: 1px solid #ddd;
     margin-bottom: 10px;
     border-radius: 4px;
+    transition: background-color 0.3s;
+}
+li:hover {
+    background-color: #f0f0f0;
 }
 li span {
     flex-grow: 1;
@@ -56,4 +64,24 @@ li span {
 }
 .delete-button:hover {
     background-color: #d32f2f;
+}
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.due-date, .time, .priority {
+    font-size: 0.8em;
+    color: #666;
+}
+.priority-high { color: #ff4500; }
+.priority-medium { color: #ffa500; }
+.priority-low { color: #32cd32; }
+#quote-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e6f7ff;
+    border-radius: 4px;
+    text-align: center;
+    font-style: italic;
 }
